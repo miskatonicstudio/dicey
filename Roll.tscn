@@ -1,0 +1,131 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://D20.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Roll.gd" type="Script" id=2]
+[ext_resource path="res://Tuffy.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://D6.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.00392157, 0.129412, 0.309804, 1 )
+
+[sub_resource type="QuadMesh" id=6]
+size = Vector2( 6.827, 4 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( -3.4135, -2, 0, -3.4135, 2, 0, 3.4135, 2, 0, -3.4135, -2, 0, 3.4135, 2, 0, 3.4135, -2, 0 )
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 6.827, 7.527 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -3.4135, -3.7635, 0, -3.4135, 3.7635, 0, 3.4135, 3.7635, 0, -3.4135, -3.7635, 0, 3.4135, 3.7635, 0, 3.4135, -3.7635, 0 )
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( -3.4135, -3.7635, 0, -3.4135, 3.7635, 0, 3.4135, 3.7635, 0, -3.4135, -3.7635, 0, 3.4135, 3.7635, 0, 3.4135, -3.7635, 0 )
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( -3.4135, -3.7635, 0, -3.4135, 3.7635, 0, 3.4135, 3.7635, 0, -3.4135, -3.7635, 0, 3.4135, 3.7635, 0, 3.4135, -3.7635, 0 )
+
+[sub_resource type="ConcavePolygonShape" id=11]
+data = PoolVector3Array( -3.4135, -3.7635, 0, -3.4135, 3.7635, 0, 3.4135, 3.7635, 0, -3.4135, -3.7635, 0, 3.4135, 3.7635, 0, 3.4135, -3.7635, 0 )
+
+[sub_resource type="BoxShape" id=13]
+margin = 0.001
+extents = Vector3( 6, 0.5, 6 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Roll" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0 )
+projection = 1
+fov = 35.0
+size = 4.0
+near = 0.01
+
+[node name="D6_1" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+
+[node name="D20_1" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+
+[node name="Table" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Table"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+material_override = SubResource( 5 )
+mesh = SubResource( 6 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Table/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Table/MeshInstance/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Table"]
+transform = Transform( -4.37114e-08, 4.37114e-08, -1, 1, 1.91069e-15, -4.37114e-08, 0, -1, -4.37114e-08, 3.413, 3, 0 )
+material_override = SubResource( 5 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Table/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Table/MeshInstance2/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Table"]
+transform = Transform( 1.31134e-07, -4.37114e-08, 1, -1, -5.73206e-15, 1.31134e-07, 0, -1, -4.37114e-08, -3.413, 3, 0 )
+material_override = SubResource( 5 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Table/MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Table/MeshInstance3/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Table"]
+transform = Transform( -5.73206e-15, 1, 0, -1, -5.73206e-15, 1.31134e-07, 1.31134e-07, 0, 1, 0, 3, -2 )
+material_override = SubResource( 5 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Table/MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Table/MeshInstance5/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Table"]
+transform = Transform( -5.73206e-15, -1, -8.74228e-08, -1, -5.73206e-15, 1.31134e-07, -1.31134e-07, 8.74228e-08, -1, 0, 3, 2 )
+material_override = SubResource( 5 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Table/MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Table/MeshInstance4/StaticBody"]
+shape = SubResource( 11 )
+
+[node name="StaticBody" type="StaticBody" parent="Table"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Table/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+shape = SubResource( 13 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 487.0
+margin_bottom = 172.0
+custom_fonts/font = SubResource( 12 )
+text = " "
