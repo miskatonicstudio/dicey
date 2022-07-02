@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://font_big.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Roll.gd" type="Script" id=2]
-[ext_resource path="res://font_small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/font_big.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/Roll.gd" type="Script" id=2]
+[ext_resource path="res://fonts/font_small.tres" type="DynamicFont" id=3]
 
 [sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.00392157, 0.129412, 0.309804, 1 )

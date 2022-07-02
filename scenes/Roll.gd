@@ -1,8 +1,8 @@
 extends Spatial
 
 const DICE = {
-	"d6": preload("res://D6.tscn"),
-	"d20": preload("res://D20.tscn"),
+	"d6": preload("res://scenes/dice/D6.tscn"),
+	"d20": preload("res://scenes/dice/D20.tscn"),
 }
 
 onready var label = $CenterContainer/Label

@@ -11,7 +11,7 @@ func _ready():
 		var normal = v1.normalized().cross(v2.normalized())
 		normal = normal.normalized()
 		
-		var side_scene = load("Side.tscn").instance()
+		var side_scene = load("res://scenes/Side.tscn").instance()
 		side_scene.value = side + 1
 		add_child(side_scene)
 		var target = to_global(normal * 100) + to_global(Vector3.ZERO)
