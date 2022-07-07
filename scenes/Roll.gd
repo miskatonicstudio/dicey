@@ -2,6 +2,7 @@ extends Spatial
 
 const DICE = {
 	"d6": preload("res://scenes/dice/D6.tscn"),
+	"d12": preload("res://scenes/dice/D12.tscn"),
 	"d20": preload("res://scenes/dice/D20.tscn"),
 }
 

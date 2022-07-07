@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://materials/die_surface.tres" type="Material" id=1]
+[ext_resource path="res://scenes/dice/d12.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://scenes/dice/D12.gd" type="Script" id=3]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( 2.98023e-08, 0.467086, 0.178403, 0.178403, 2.98023e-08, 0.467086, 0.288591, 0.288591, 0.288591, 0.467086, 0.178403, 2.98023e-08, 2.98023e-08, 0.467086, -0.178495, -0.467086, 0.178403, 2.98023e-08, -0.288683, 0.288591, 0.288591, -0.178495, 2.98023e-08, 0.467086, 2.98023e-08, -0.467086, 0.178403, 0.288591, -0.288683, 0.288591, 0.467086, -0.178495, 2.98023e-08, 0.178403, 2.98023e-08, -0.467086, 0.288591, 0.288591, -0.288683, -0.178495, 2.98023e-08, -0.467086, -0.288683, 0.288591, -0.288683, -0.467086, -0.178495, 2.98023e-08, -0.288683, -0.288683, 0.288591, 2.98023e-08, -0.467086, -0.178495, 0.288591, -0.288683, -0.288683, -0.288683, -0.288683, -0.288683 )
+
+[node name="D12" type="RigidBody" groups=["dice"]]
+script = ExtResource( 3 )
+
+[node name="Model" type="MeshInstance" parent="."]
+material_override = ExtResource( 1 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
